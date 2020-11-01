@@ -1,0 +1,9 @@
+Q1: If a division will have a gray level segment with no pixels,
+    the procedure will crash. why??
+
+Answer: the formula for calculating the q_i is: sum of all z's between each z_i to z_i+1
+    multiply the p(z) for each one divided by the sum of all p(z) between z_i to z_i+1.
+    if a division will have a gray level segment with no pixels the sum of all p(z)
+    between z_i to z_i+1 will be zero (since p(z) is the amount of pixels and we have
+    no pixels). in this case while calculating q and operating the formula mentioned
+    above, we will be dividing by zero- which will cause the procedure to crash.
